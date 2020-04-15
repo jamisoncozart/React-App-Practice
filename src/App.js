@@ -10,19 +10,13 @@ class App extends Component {
       { name: 'Nico', age: 22 },
       { name: 'Pat', age: 66 },
       { name: 'Jim', age: 76 }
-    ]
+    ],
+    showPersons: false
   }
 
-  switchNameHandler = (newName) => {
-  // this.state.persons[0].name="Jamison"; DONT TO THIS
-    this.setState({
-      persons: [
-        { name: newName, age: 23 },
-        { name: newName, age: 22 },
-        { name: newName, age: 66 },
-        { name: newName, age: 76 }
-      ]
-    })
+  togglePersonsHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({showPersons: !doesShow});
   }
 
   nameChangedHandler = (event) => {
@@ -49,22 +43,22 @@ class App extends Component {
       <div className="App">
         <button 
           style={style}
-          onClick={this.switchNameHandler.bind(this, "Nichole")}>Switch Name</button>
-        <Person 
-          name={this.state.persons[0].name} 
-          age={this.state.persons[0].age}
-          changed={this.nameChangedHandler} />
-        <Person 
-          name={this.state.persons[1].name} 
-          age={this.state.persons[1].age} />
-        <Person 
-          name={this.state.persons[2].name} 
-          age={this.state.persons[2].age} 
-          changed={this.nameChangedHandler} /> 
-        <Person 
-          name={this.state.persons[3].name} 
-          age={this.state.persons[3].age} 
-          click={this.switchNameHandler.bind(this, "Jamie")} /> 
+          onClick={this.togglePersonsHandler}>Toggle People</button>
+        { this.state.showPersons ? 
+          <div>
+            <Person 
+              name={this.state.persons[0].name} 
+              age={this.state.persons[0].age}
+              changed={this.nameChangedHandler} />
+            <Person 
+              name={this.state.persons[1].name} 
+              age={this.state.persons[1].age} />
+            <Person 
+              name={this.state.persons[2].name} 
+              age={this.state.persons[2].age} 
+              changed={this.nameChangedHandler} />
+          </div> : null
+        }
       </div>
     );
     // return (
