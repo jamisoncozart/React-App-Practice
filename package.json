@@ -1,6 +1,6 @@
 {
-  "homepage": "http://jamisoncozart.github.io/reactpractice",
-  "name": "test-project",
+  "homepage": "https://jamisoncozart.github.io/reactpractice",
+  "name": "reactpractice",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

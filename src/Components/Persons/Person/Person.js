@@ -15,6 +15,7 @@ const StyledDiv = styled.div`
 `;
 
 const person = (props) => {
+  console.log('[Person.js] rendering...');
   return(
     <StyledDiv onClick={props.click} className='Person'>
       <h1>{props.name}</h1>
