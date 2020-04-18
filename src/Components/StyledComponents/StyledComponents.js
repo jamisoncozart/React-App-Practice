@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+const StyledButton = styled.button`
   background-color: ${props => props.alt ? 'red' : 'green'};
   color: ${props => props.alt ? 'black' : 'white'};
   font: inherit;
@@ -13,3 +13,5 @@ export const StyledButton = styled.button`
     color: black;
   }
 `;
+
+export default StyledButton;
